@@ -64,7 +64,7 @@ plot(g_rest,
      vertex.label.color = "black", 
      layout = layout_with_dh)
 
-# Example 2
+# Example 2 
 load("/home/juan/SkillsOccupations.RData")
 library(dplyr)
 Scientists <- filter(skills, grepl("Scientist", Occupation))
