@@ -4,11 +4,6 @@ load("/home/juan/Comments.RData")
 my_corpus <- corpus(Comments$text)
 mycorpus <- data.frame(summary(my_corpus, n = nrow(Comments)))
 summary(my_corpus)
-docvars(my_corpus, "Rankings") <- Comments$Rankings
-docvars(my_corpus, "Total.Comments") <- Comments$TotalComments
-Comments$Types <- mycorpus$Types
-Comments$Tokens <- mycorpus$Tokens
-Comments$Sentences <- mycorpus$Sentences
 
 spanishstopwords <- c("q", stopwords("spanish"))
 Restaurant <- dfm(corpus(
