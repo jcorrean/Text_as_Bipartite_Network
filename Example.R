@@ -1,4 +1,4 @@
-# Example 1
+# Here's an example that shows how to model a text input as a bipartite network
 library(quanteda)
 load("/home/juan/Comments.RData")
 my_corpus <- corpus(Comments$text)
