@@ -1,5 +1,6 @@
 # Here's an example that shows how to model a text input as a bipartite network
 library(quanteda)
+library(quanteda.textstats)
 load("/home/jc/Documents/GitHub/Text_as_Bipartite_Network/Comments.RData")
 my_corpus <- corpus(Comments$text)
 mycorpus <- data.frame(summary(my_corpus, n = nrow(Comments)))
@@ -17,9 +18,10 @@ restaurant <- textstat_simil(Restaurant,
 restaurantdf <- data.frame(as.matrix(restaurant))
 restaurantdf[is.na(restaurantdf)] = 0
 restaurant <- data.frame(jaccard = restaurant[lower.tri(restaurant, diag = FALSE)])
-library(clustertend)
-set.seed(123)
-hopkins(restaurantdf, n = nrow(restaurantdf)/10)
+#library(clustertend)
+#library(hopkins)
+#set.seed(123)
+#hopkins(restaurantdf, m = nrow(restaurantdf)/10)
 # Hopkins = 0.06922988
 
 library(mclust)
