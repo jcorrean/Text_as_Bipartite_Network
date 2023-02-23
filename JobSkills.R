@@ -1,3 +1,4 @@
+load("/home/jc/Documents/GitHub/Text_as_Bipartite_Network/SkillsOccupations.RData")
 # Example for Job Titles and Skills
 library(dplyr)
 Scientists <- filter(skills, grepl("Scientist", Occupation))
