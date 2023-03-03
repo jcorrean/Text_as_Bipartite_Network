@@ -1,5 +1,5 @@
 # First, we upload our raw data set.
-load("/home/jc/Documents/RScripts/Comments.RData")
+load("/home/jc/Documents/GitHub/Text_as_Bipartite_Network/Comments.RData")
 # Second, we will use the quanteda package
 # for generating the corpus and conducting
 # usual preprocessing such as removing
@@ -36,9 +36,17 @@ barplot(Ratings, main="Distribution of Ratings",
 # of comments.
 
 spanishstopwords <- c("q", stopwords("spanish"))
+library(dplyr)
+Asian = UserComments %>% filter(., Category == "Asian")
+MCAsian <- corpus(Asian$text)
+class(MCAsian)
 
+# I introduced here some modifications that make this code work with 
+# recent quanteda updates
 library(quanteda)
-CommentsAsian <- dfm(corpus_subset(my_corpus, Category == "Asian"), remove_numbers = TRUE, remove = spanishstopwords, stem = TRUE, remove_punct = TRUE) 
+CommentsAsian <- tokens(MCAsian) 
+CommentsAsian <- dfm(CommentsAsian)
+library(quanteda.textstats)
 Asian <- textstat_simil(CommentsAsian, margin = "documents", method = "jaccard")
 Asiandf <- data.frame(as.matrix(Asian))
 Asian <- data.frame(jaccard = Asian[lower.tri(Asian, diag = FALSE)])
