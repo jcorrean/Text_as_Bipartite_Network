@@ -13,4 +13,4 @@ V(bn2)$size <- (Scientists$Importance)/3
 E(bn2)$color <- "black"
 plot(bn2,
      vertex.label.color = "black",
-     layout = layout_in_circle, main = "")
+     layout = layout_as_star, main = "")
