@@ -1,7 +1,7 @@
 # Here's an example that shows how to model a text input as a bipartite network
 library(quanteda)
 library(quanteda.textstats)
-load("/home/jc/Documents/GitHub/Text_as_Bipartite_Network/Comments.RData")
+load("Comments.RData")
 my_corpus <- corpus(Comments$text)
 mycorpus <- data.frame(summary(my_corpus, n = nrow(Comments)))
 summary(my_corpus)
