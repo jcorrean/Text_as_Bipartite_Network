@@ -2,8 +2,8 @@
 library(quanteda)
 library(quanteda.textstats)
 load("Comments.RData")
-my_corpus <- corpus(Comments$text)
-mycorpus <- data.frame(summary(my_corpus, n = nrow(Comments)))
+my_corpus <- corpus(UserComments$text)
+mycorpus <- data.frame(summary(my_corpus, n = nrow(UserComments)))
 summary(my_corpus)
 
 spanishstopwords <- c("q", stopwords("spanish"))
