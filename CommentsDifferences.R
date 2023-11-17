@@ -1,5 +1,5 @@
 # First, we upload our raw data set.
-load("/home/jc/Documents/GitHub/Text_as_Bipartite_Network/Comments.RData")
+load("Comments.RData")
 # Second, we will use the quanteda package
 # for generating the corpus and conducting
 # usual preprocessing such as removing
